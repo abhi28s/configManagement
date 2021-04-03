@@ -1,13 +1,6 @@
 ## #################################
-## Configuration Management
+## Configuration Management using Chef
 ## #################################
-
-3/4 April   - Chef
-10/11 April - Puppet
-17/18 April - Ansible
-24/25 April - Ansible / Terraform
-1 May       - ?
-
 
 ## Keywords
 
