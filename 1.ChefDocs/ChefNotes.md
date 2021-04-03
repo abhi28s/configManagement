@@ -3,10 +3,8 @@
 ## #################################
 
 ## Keywords
-
-DSL - Domain Specific Language
-Imperative (What+How) vs Declarative (What)
-
+- DSL - Domain Specific Language
+- Imperative (What+How) vs Declarative (What)
 
 
 
@@ -54,90 +52,72 @@ ERROR: Train::Transports::SSHFailed: SSH session could not be established
 Solution - edit file /etc/ssh/sshd_config
 
 PasswordAuthentiation no
+
 to
+
 PasswordAuthentication yes
 
 
 ## ##################################
+## Knife Command Examples
 
-knife node list
-knife cookbook list
-knife role list
-knife environment list
+    knife node list
+    knife cookbook list
+    knife role list
+    knife environment list
 
 
-chef OHAI
+## chef OHAI
 
-chef bootstrap --> chef-client --> OHAI
+    CLI - ohai platform
+    Recipe - node['platform']
 
-Ansible --> Facts       --> Setup Module
-Puppet  --> Facts       --> Facter (Puppet Agent)
-Chef    --> Attributes  --> Ohai (Chef-Client)
-
-Node Object
-
-sosreport
-
-CLI - ohai platform
-Recipe - node['platform']
-
-CLI - ohai memory/total
-Recipe - node['memory']['total']
+    CLI - ohai memory/total
+    Recipe - node['memory']['total']
 
 ## ##################################
 
+    package "git" do
+        action :install
+    end
 
-package "git" do
-    action :install
-end
-
-ubuntu --> apt-get
-redhat --> yum
-suse --> zypper
-
-## ##################################
-
-
-Pacakges
-Code files --> .java, .py, .rb
-Functions 
-
-Cookbooks   --> Packages
-Recipes     --> Code files, (.rb)
-Resources   --> Functions
-
+    ubuntu --> apt-get
+    redhat --> yum
+    suse --> zypper
 
 ## ##################################
-1. Create a cookbook using chef generate command
 
-chef generate cookbook <cookbookname>
+    1. Create a cookbook using chef generate command
 
-2. edit the recipe
+    chef generate cookbook <cookbookname>
 
-vi recipe/default.rb
+    2. edit the recipe
 
-## Install Apache
-package 'apache2' do
-    action :install
-end
+    vi recipe/default.rb
 
-## Start and enable Apache service
-service 'apache2' do
-    action [:start, :enable]
-end
+    ## Install Apache
+    package 'apache2' do
+        action :install
+    end
 
-3. upload the cookbook
-knife cookbook upload <cookbookname>
+    ## Start and enable Apache service
+    service 'apache2' do
+        action [:start, :enable]
+    end
 
-4. Edit node's runlist
+    3. upload the cookbook
+    knife cookbook upload <cookbookname>
 
-5. Run "sudo chef-client" on the node
+    4. Edit node's runlist
 
-6. Validate by accessing the web page in a browser
+    5. Run "sudo chef-client" on the node
+
+    6. Validate by accessing the web page in a browser
 
 
 
-Assignment (Optional) [3-April-2021]
+## Assignment (Optional) [3-April-2021]
+
 1. Create an account on manage.chef.io
 2. Install chef workstation on your laptop and Configure knife
 3. Bootstrap a node (AWS/DigitalOcean/GCP/Azure)
