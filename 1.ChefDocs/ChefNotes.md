@@ -30,32 +30,28 @@
 
 
 # Chef Server and Workstation
-Doc - Demo1
+    Doc - Demo1
 
-Knife config
-
-knife validation commands
+    Knife config
 
 ## ##################################
 ## Bootstrapping a Chef node
 
-knife bootstrap <fqdn> -U <username> -N <chefnode> --sudo
+    knife bootstrap <fqdn> -U <username> -N <chefnode> --sudo
 
-knife bootstrap 46.101.91.42 -U root -N prod-node --sudo
+    knife bootstrap 46.101.91.42 -U root -N prod-node --sudo
 
 
 ## ##################################
 ## SSH Error
-WARN: [SSH] connection failed, terminating (#<Net::SSH::AuthenticationFailed: Authentication failed for user root@46.101.91.42>)
-ERROR: Train::Transports::SSHFailed: SSH session could not be established
+    WARN: [SSH] connection failed, terminating (#<Net::SSH::AuthenticationFailed: Authentication failed for user root@46.101.91.42>)
+    ERROR: Train::Transports::SSHFailed: SSH session could not be established
 
-Solution - edit file /etc/ssh/sshd_config
+    Solution - edit file /etc/ssh/sshd_config
 
-PasswordAuthentiation no
-
-to
-
-PasswordAuthentication yes
+    PasswordAuthentiation no
+    to
+    PasswordAuthentication yes
 
 
 ## ##################################
