@@ -2,40 +2,37 @@
 ## Configuration Management using Chef
 ## #################################
 
-## Keywords
+### Keywords
 - DSL - Domain Specific Language
 - Imperative (What+How) vs Declarative (What)
 
 
+### Agenda
 
-## ##########################
-## Chef Config Management
-## ##########################
-
-- Chef server and workstation installation
-- Knife Configuration
-- Bootstrapping a node
-- Writing and running recipes
-- Writing Cookbooks
-- Talking to Chef server via knife
-- Common Resources
+    - Chef server and workstation installation
+    - Knife Configuration
+    - Bootstrapping a node
+    - Writing and running recipes
+    - Writing Cookbooks
+    - Talking to Chef server via knife
+    - Common Resources
 
 
-- Templates
-- Roles and Run-lists
-- Environments
-- Data bags
+    - Templates
+    - Roles and Run-lists
+    - Environments
+    - Data bags
 
 
 
 
-# Chef Server and Workstation
+### Chef Server and Workstation
     Doc - Demo1
 
     Knife config
 
 ## ##################################
-## Bootstrapping a Chef node
+### Bootstrapping a Chef node
 
     knife bootstrap <fqdn> -U <username> -N <chefnode> --sudo
 
@@ -43,7 +40,7 @@
 
 
 ## ##################################
-## SSH Error
+### SSH Error
     WARN: [SSH] connection failed, terminating (#<Net::SSH::AuthenticationFailed: Authentication failed for user root@46.101.91.42>)
     ERROR: Train::Transports::SSHFailed: SSH session could not be established
 
@@ -55,7 +52,7 @@
 
 
 ## ##################################
-## Knife Command Examples
+### Knife Command Examples
 
     knife node list
     knife cookbook list
@@ -63,7 +60,7 @@
     knife environment list
 
 
-## chef OHAI
+### chef OHAI
 
     CLI - ohai platform
     Recipe - node['platform']
@@ -112,7 +109,7 @@
 
 
 
-## Assignment (Optional) [3-April-2021]
+### Assignment (Optional) [3-April-2021]
 
 1. Create an account on manage.chef.io
 2. Install chef workstation on your laptop and Configure knife
