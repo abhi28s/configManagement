@@ -1,4 +1,4 @@
-## configManagement
+## Configuration Management
 ***Configuration Management using Chef Puppet and Ansible***
 
     3 April     - Chef
