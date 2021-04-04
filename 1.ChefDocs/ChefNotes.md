@@ -16,20 +16,27 @@
     - Writing Cookbooks
     - Talking to Chef server via knife
     - Common Resources
-
-
     - Templates
-    - Roles and Run-lists
+    - Roles and Run-lists   
     - Environments
-    - Data bags
 
+    - Data bags
 
 
 
 ### Chef Server and Workstation
     Doc - Demo1
 
-    Knife config
+
+### Knife config
+
+Directory structure of Chef-repo for knife
+chef-repo
+    --> .chef
+        - knife.rb
+        - user.pem
+        - validator.pem
+    --> cookbooks
 
 ## ##################################
 ### Bootstrapping a Chef node
@@ -38,7 +45,9 @@
 
     knife bootstrap 46.101.91.42 -U root -N prod-node --sudo
 
+    knife bootstrap 46.101.91.42 -U ubuntu -i ~/.ssh/key -N prod-node --sudo
 
+    knife bootstrap 139.59.191.183 -U root -N web-node -r 'role[webserver]' --sudo
 ## ##################################
 ### SSH Error
     WARN: [SSH] connection failed, terminating (#<Net::SSH::AuthenticationFailed: Authentication failed for user root@46.101.91.42>)
@@ -108,26 +117,45 @@
     6. Validate by accessing the web page in a browser
 
 
+### Class activity - 4 (Update index.html file using Chef)
 
-### Assignment (Optional) [3-April-2021]
+    1. update the recipe
+    ~chef-repo/cookbooks/web/recipes/default.rb
 
-1. Create an account on manage.chef.io
-2. Install chef workstation on your laptop and Configure knife
-3. Bootstrap a node (AWS/DigitalOcean/GCP/Azure)
+    2. Upload the cookbook
+    knife cookbook upload web
 
+    3. Verify the upload on Chef UI
+    Check the recipe --> Policy --> web --> content --> recipe
 
+    4. Run Chef client
 
-
-
-
-
-
-
-
+    sudo chef-client (on the node)
 
 
+### Class activity - 5 (Working with Chef Environments)
+
+    1. Create a new environment
+    2. Add node to the environment
+    3. Create a new version of the existing cookbook
+    4. Add constraints for cookbooks in the environemnt
+    5. Run chef-client
+    6. Validate the changes
 
 
 
+### Additional Learning (Optional)
+
+    1. Create a parallel lab environment via the following:
+        1. Create an account on manage.chef.io
+        2. Install chef workstation on your laptop and Configure knife
+        3. Bootstrap a node (AWS/DigitalOcean/GCP/Azure)
+    
+    2. Complete the following track on learn.chef.io
+        - Manage your fleet with Chef Infra
 
 
+
+### References:
+
+    https://learn.chef.io/courses/course-v1:chef+Infra101+perpetual/course/
