@@ -4,11 +4,12 @@
 
 ### Keywords
     - DSL - Domain Specific Language
+    - DSC - Desired State Configuration
+    - Immutable Infrastructure
+    - Out-of-Band Changes
     - Imperative (What+How) vs Declarative (What)
 
-
 ### Agenda
-
     - Chef server and workstation installation
     - Knife Configuration
     - Bootstrapping a node
@@ -21,8 +22,6 @@
     - Environments
 
     - Data bags
-
-
 
 ### Chef Server and Workstation
     Doc - Demo1
@@ -66,7 +65,6 @@
     knife cookbook list
     knife role list
     knife environment list
-
 
 ### OHAI
 
