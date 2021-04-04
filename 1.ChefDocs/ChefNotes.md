@@ -151,6 +151,42 @@
 
     Step5: Validate the changes on browser
 
+
+## ##################################
+
+### Working with Chef Environments using CLI
+
+    ## List all environments
+    knife environment list
+
+    ## Show details of an environment
+    knife environment show <environment_name>
+
+    ## Check existing environment of a node
+
+    knife node show <node_name>
+
+    ## Create Environment from file:
+    vi ~/chef-repo/environments/prod.rb
+
+    ### No Cookbook restrictions
+    name 'prod'
+    description 'Our prod environment for business applications'
+
+    ### With Cookbook restrictions
+    name 'prod'
+    description 'Our prod environment for business applications'
+
+    cookbook 'company_web', '= 0.1.0'
+    cookbook 'myhaproxy', '= 1.0.0'
+        
+    ## Once above file is created, run the following command to create an environment from file:
+
+    knife environment from file prod.rb
+
+    ## Setting node environment to production
+    knife node environment set <node_name> <environment_name>
+
 ### Class activity - 4 (Working with Chef Environments)
 
     1. Create a new environment
