@@ -3,8 +3,8 @@
 ## #################################
 
 ### Keywords
-- DSL - Domain Specific Language
-- Imperative (What+How) vs Declarative (What)
+    - DSL - Domain Specific Language
+    - Imperative (What+How) vs Declarative (What)
 
 
 ### Agenda
@@ -27,16 +27,16 @@
 ### Chef Server and Workstation
     Doc - Demo1
 
-
 ### Knife config
+    Doc - Demo 3
 
-Directory structure of Chef-repo for knife
-chef-repo
-    --> .chef
-        - knife.rb
-        - user.pem
-        - validator.pem
-    --> cookbooks
+    Directory structure of Chef-repo for knife
+    chef-repo
+        --> .chef
+            - knife.rb
+            - user.pem
+            - validator.pem
+        --> cookbooks
 
 ## ##################################
 ### Bootstrapping a Chef node
@@ -45,7 +45,7 @@ chef-repo
 
     knife bootstrap 46.101.91.42 -U root -N prod-node --sudo
 
-    knife bootstrap 46.101.91.42 -U ubuntu -i ~/.ssh/key -N prod-node --sudo
+    knife bootstrap 46.101.91.42 -U ubuntu -i ~/.ssh/public_key -N prod-node --sudo
 
     knife bootstrap 139.59.191.183 -U root -N web-node -r 'role[webserver]' --sudo
 ## ##################################
@@ -59,7 +59,6 @@ chef-repo
     to
     PasswordAuthentication yes
 
-
 ## ##################################
 ### Knife Command Examples
 
@@ -69,7 +68,7 @@ chef-repo
     knife environment list
 
 
-### chef OHAI
+### OHAI
 
     CLI - ohai platform
     Recipe - node['platform']
@@ -92,13 +91,13 @@ chef-repo
 ## ##################################
 
 
-
-**Class Activity - 1** (Create a Recipe to install Apache on Ubuntu)
+### Class Activity - 1 (Create a Recipe to install Apache on Ubuntu)
     Using Chef
     1. Install apache on Ubuntu
-    2. start and enable the service
+    2. Start and enable the service
+    3. Create a sample index.html file (/var/www/html/index.html)
 
-**Class Activity - 2** (Generate Cookbook "web" and upload on Chef server)
+### Class Activity - 2 (Generate Cookbook "web" and upload on Chef server)
 
     1. Create a cookbook using chef generate command
 
@@ -127,9 +126,7 @@ chef-repo
 
     6. Validate by accessing the web page in a browser
 
-
-
-### Class Activity - 4 (Working with Template resource)
+### Class Activity - 3 (Working with Template resource)
 
     Step 1: Create a template resource
 
@@ -152,30 +149,13 @@ chef-repo
         </body>
     </html>
 
-
     Step3: upload cookbook
 
     Step4: sudo chef-client (on node)
 
     Step5: Validate the changes on browser
 
-### Class activity - 4 (Update index.html file using Chef)
-
-    1. update the recipe
-    ~chef-repo/cookbooks/web/recipes/default.rb
-
-    2. Upload the cookbook
-    knife cookbook upload web
-
-    3. Verify the upload on Chef UI
-    Check the recipe --> Policy --> web --> content --> recipe
-
-    4. Run Chef client
-
-    sudo chef-client (on the node)
-
-
-### Class activity - 5 (Working with Chef Environments)
+### Class activity - 4 (Working with Chef Environments)
 
     1. Create a new environment
     2. Add node to the environment
@@ -183,7 +163,6 @@ chef-repo
     4. Add constraints for cookbooks in the environemnt
     5. Run chef-client
     6. Validate the changes
-
 
 
 ### Additional Learning (Optional)
