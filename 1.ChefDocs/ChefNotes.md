@@ -87,7 +87,18 @@ chef-repo
     redhat --> yum
     suse --> zypper
 
+
+
 ## ##################################
+
+
+
+**Class Activity - 1** (Create a Recipe to install Apache on Ubuntu)
+    Using Chef
+    1. Install apache on Ubuntu
+    2. start and enable the service
+
+**Class Activity - 2** (Generate Cookbook "web" and upload on Chef server)
 
     1. Create a cookbook using chef generate command
 
@@ -102,7 +113,7 @@ chef-repo
         action :install
     end
 
-    ## Start and enable Apache service
+    ## Start and enable Apache service
     service 'apache2' do
         action [:start, :enable]
     end
@@ -116,6 +127,37 @@ chef-repo
 
     6. Validate by accessing the web page in a browser
 
+
+
+### Class Activity - 4 (Working with Template resource)
+
+    Step 1: Create a template resource
+
+    template '/var/www/html/index.html' do
+        source 'index.html.erb'
+        variables(
+            fqdn: node['fqdn']
+        )
+        mode '0755'
+        action :create
+    end
+
+    Step2: Create index.html.erb file
+
+    vi cookbooks/web/templates/index.html.erb
+
+    <html>
+        <body>
+            <h1>Hello Chef world from <%= @fqdn %> </h1>
+        </body>
+    </html>
+
+
+    Step3: upload cookbook
+
+    Step4: sudo chef-client (on node)
+
+    Step5: Validate the changes on browser
 
 ### Class activity - 4 (Update index.html file using Chef)
 
