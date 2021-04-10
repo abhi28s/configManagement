@@ -8,6 +8,18 @@
     - Immutable Infrastructure
     - Out-of-Band Changes
     - Imperative (What+How) vs Declarative (What)
+    - Chef/Puppet/Ansible/SaltStack/CFEngine/BladeLogic/Powershell DSC
+
+Puppet (Google)
+Chef (Facebook) 
+Ansible --> Puppet
+
+
+Jez Humble
+Mark Hornbeek
+Gene Kim - The Phoenix Project,  The devops handbook, The Goal
+
+
 
 ### Agenda
     - Chef server and workstation installation
@@ -88,10 +100,10 @@
 
 
 ### Class Activity - 1 (Create a Recipe to install Apache on Ubuntu)
-    Using Chef
+- Apache Web server Installation and configuration
     1. Install apache on Ubuntu
-    2. Start and enable the service
-    3. Create a sample index.html file (/var/www/html/index.html)
+    2. Create a sample index.html file (/var/www/html/index.html)
+    3. Start and enable the service
 
 ### Class Activity - 2 (Generate Cookbook "web" and upload on Chef server)
 
@@ -206,7 +218,14 @@
     
     2. Complete the following track on learn.chef.io
         - Manage your fleet with Chef Infra
+    3. Check the tutorials at: https://www.tutorialspoint.com/chef/index.htm
+    4. Try to complete Assessment 2 using Chef: 
+    "Deployment of WordPress Environment"
 
+
+Chef Databags --> Encrypted Data bags --> Chef Vault
+
+CFEngine --> C
 
 
 ### References
