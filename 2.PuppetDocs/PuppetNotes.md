@@ -9,7 +9,6 @@
 - Writing simple manifests
 - Working locally (puppet apply)
 - Managing Nodes (puppet agent run)
-- 
 
 
 Attributes --> Ohai --> Chef-client
@@ -55,10 +54,11 @@ All Modules for environment “Production” would be saved inside:
 ### ###############################
 
 ### Facter and Facts
-Calling facts inside a manifest:
-facts['os']['family']
-or
-$::osfamily
+
+    Calling facts inside a manifest:
+    facts['os']['family']
+    or
+    $::osfamily
 
 
 ### ###############################
@@ -84,9 +84,11 @@ $::osfamily
     }
 
 ### Validate file syntax
+
 puppet parser validate filename.pp
 
 ### Execute file
+
 puppet apply filename.pp
 
 
@@ -123,10 +125,13 @@ Put the following content inside sit.pp
     }
 
 ### Validate file syntax
+
 puppet parser validate <filename.pp>
 
 ### Execute file
+
 Go to puppet nodes and run the following command:
+
 sudo puppet agent -t
 
 ### ###############################
