@@ -2,23 +2,7 @@
 ### Puppet Notes
 ## ##############################
 
-
-## Desired State Configuration
-
-
-Not Idempotent
-
- <install desired package>
-
-
-Idempotent
-
-if
-    installed already?
-    <dont take any action>
-
-else 
-    <install desired package>
+### Keywords
 
 
 Attributes --> Ohai --> Chef-client
@@ -31,8 +15,10 @@ Roles ---> Playbooks ----> Modules (Functions)
 
 
 
+## ##############################
 
-*.mycompany.com
-webserver.mycompany.com
-db.mycompany.com
+site.pp
+init.pp
+
+
 
