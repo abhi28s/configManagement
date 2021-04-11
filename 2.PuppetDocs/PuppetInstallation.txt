@@ -21,7 +21,7 @@ wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 
 3. Edit /etc/hosts
 - Open /etc/hosts and move the hostname mapping to the localhost:
-- 127.0.0.1 <fqdn> localhost puppet puppetserver
+- 127.0.0.1 localhost puppet puppetserver
 vi /etc/hosts
 or
 nano /etc/hosts

@@ -30,3 +30,9 @@ Modules ---> Manifests --> Resources (Functions)
 Roles ---> Playbooks ----> Modules (Functions)
 
 
+
+
+*.mycompany.com
+webserver.mycompany.com
+db.mycompany.com
+
