@@ -21,18 +21,6 @@ node default {
 
 vi /etc/puppetlabs/code/environments/production/manifests/site.pp
 
-puppet agent -t
-
-
-puppet parser validate <filename.pp>
-
-puppet apply <filename.pp>
-
-facts['os']['family']
-
-$::osfamily
-
-
 package { 'install_my_faviourte_pkg':
   name      => 'tree',
   ensure    => 'present',
@@ -49,24 +37,4 @@ user { 'sk12k':
   password  => 'Passw0rd',
   home      => '/home/sk12k',
   shell     => '/bin/bash',
-}
-
-
-vi /etc/puppetlabs/code/environments/production/manifests/site.pp
-
-
-package { 'sudo' : ensure => present }
-package { 'tree' : ensure => present }
-package { 'cron' : ensure => present }
-
-
-package {
-  [
-    'cron',
-    'sudo',
-    'unzip',
-    'tree',
-    'screen',
-  ]
-  ensure => installed,
 }
