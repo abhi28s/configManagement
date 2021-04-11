@@ -65,28 +65,29 @@ $::osfamily
 ### Configure Local Node using Puppet (puppet Apply)
 ### ###############################
 
-package { 'install_my_faviourte_pkg':
-  name      => 'tree',
-  ensure    => 'present',
-}
-file { '/tmp/info.txt':
-  ensure    => 'present',
-  content   => "This file was created using Puppet on ${::fqdn}\n",
-  mode      => '0644',
-  owner     => root,
-  group     => root,
-}
-user { 'sk12k':
-  ensure    => 'present',
-  password  => 'Passw0rd',
-  home      => '/home/sk12k',
-  shell     => '/bin/bash',
-}
+    package { 'install_my_faviourte_pkg':
+      name      => 'tree',
+      ensure    => 'present',
+    }
+    file { '/tmp/info.txt':
+      ensure    => 'present',
+      content   => "This file was created using Puppet on ${::fqdn}\n",
+      mode      => '0644',
+      owner     => root,
+      group     => root,
+    }
+    user { 'sk12k':
+      ensure    => 'present',
+      password  => 'Passw0rd',
+      home      => '/home/sk12k',
+      shell     => '/bin/bash',
+    }
+
 ### Validate file syntax
-puppet parser validate <filename.pp>
+puppet parser validate filename.pp
 
 ### Execute file
-puppet apply <filename.pp>
+puppet apply filename.pp
 
 
 ### ###############################
@@ -100,26 +101,26 @@ vi site.pp
 
 Put the following content inside sit.pp
 
-node default {
-  package { 'tree':
-  ensure => 'present',
-  }
-  file { '/tmp/info.txt':
-    ensure  => 'present',
-    content => "This file was created using Puppet",
-    mode    => '0644',
-    owner   => root,
-    group   => root,
-  }
-  ## user { 'sk12k': ensure => 'present' }
+    node default {
+      package { 'tree':
+      ensure => 'present',
+      }
+      file { '/tmp/info.txt':
+        ensure  => 'present',
+        content => "This file was created using Puppet",
+        mode    => '0644',
+        owner   => root,
+        group   => root,
+      }
+      ## user { 'sk12k': ensure => 'present' }
 
-  user { 'sk12k':
-    ensure    => 'present',
-    password  => 'Passw0rd',
-    home      => '/home/sk12k',
-    shell     => '/bin/bash',
-  }
-}
+      user { 'sk12k':
+        ensure    => 'present',
+        password  => 'Passw0rd',
+        home      => '/home/sk12k',
+        shell     => '/bin/bash',
+      }
+    }
 
 ### Validate file syntax
 puppet parser validate <filename.pp>
@@ -132,22 +133,22 @@ sudo puppet agent -t
 
 ### Declare multiple packages in a manifest
 
-package { 'sudo' : ensure => present }
-package { 'tree' : ensure => present }
-package { 'cron' : ensure => present }
+    package { 'sudo' : ensure => present }
+    package { 'tree' : ensure => present }
+    package { 'cron' : ensure => present }
 
-or
+    or
 
-package {
-  [
-    'cron',
-    'sudo',
-    'unzip',
-    'tree',
-    'screen',
-  ]
-  ensure => installed,
-}
+    package {
+      [
+        'cron',
+        'sudo',
+        'unzip',
+        'tree',
+        'screen',
+      ]
+      ensure => installed,
+    }
 
 
 ### ###############################
